@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pan.mapper.FoodMapper">
+    <insert id="addfile">
+        insert into path values (#{username},#{path},#{name},#{time},#{type},#{details})
+    </insert>
+    <insert id="insertuser" parameterType="com.example.pan.entity.User">
+        insert  into users values (#{username},#{password},#{details},#{phone},#{perms},#{role})
+    </insert>
+    <update id="updateuser" parameterType="com.example.pan.entity.User">
+        update users set password=#{password},details=#{details},phone=#{phone},perms=#{perms},role=#{role}
+        where username=#{username}
+    </update>
+    <update id="changpassword">
+        update users set password=#{password} where username=#{username};
+    </update>
+    <update id="changpasswordadmin">
+        update admin set password=#{password} where username=#{username};
+    </update>
+    <delete id="deleteuser">
+        delete from users where  username=#{username}
+    </delete>
+    <delete id="deletefile" >
+        delete from path where username=#{username} and name=#{filename};
+    </delete>
+    <select id="getallpath" resultType="com.example.pan.entity.FilePath">
+        select * from path order by time desc
+    </select>
+    <select id="getpathbyusernametype" resultType="com.example.pan.entity.FilePath">
+        select * from path where username=#{username} and type=#{type} order by time desc
+    </select>
+    <select id="getpathbyusername" resultType="com.example.pan.entity.FilePath">
+        select * from path where username=#{username}  order by time desc
+    </select>
+
+    <select id="getuserbyname" resultType="com.example.pan.entity.User">
+        select * from  users where  username=#{username}
+    </select>
+    <select id="getalluser" resultType="com.example.pan.entity.User">
+        select * from  users
+    </select>
+
+    <select id="searchuser" resultType="com.example.pan.entity.User">
+        select * from users where username like "%"#{mohu}"%" and details like "%"#{details}"%";
+    </select>
+
+    <select id="getpathadmin" resultType="com.example.pan.entity.FilePath">
+        select * from path where 
+        <choose>
+            <when test="type!=''">
+                type =#{type} and
+            </when>
+        </choose>
+        username like "%"#{username}"%" and
+        name like "%"#{filename}"%" and details like "%"#{details}"%"
+        order by time desc
+    </select>
+
+    <select id="getadmin" parameterType="java.lang.String" resultType="com.example.pan.entity.admin">
+        select * from admin where username=#{username}
+    </select>
+
+</mapper>
