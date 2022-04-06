@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文件上传</title>
+	<meta name="renderer" content="webkit">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">	
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
+	<meta name="apple-mobile-web-app-capable" content="yes">	
+	<meta name="format-detection" content="telephone=no">
+	<!--https://hanlei525.github.io/layui-v2.4.3/layui-v2.4.5/css/layui.css-->
+	<link rel="stylesheet" type="text/css" href="../../common/layui/css/layui.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../common/layui/css/layui.mobile.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../common/bootstrap/css/bootstrap.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../common/global.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/personal.css" media="all">
+	<!--本地layui.css和layui.js文件有问题，，故在线引用-->
+
+	<script type="text/javascript" src="../../common/layui/layui.js"></script>
+	<!--<script type="text/javascript" src="../../common/layui/layui.all.js"></script>-->
+</head>
+<body>
+<div style="padding: 20px; background-color: #F2F2F2;">
+	<div class="layui-row  question_upload" style="margin-left: auto;margin-right: auto;">
+		<div class="layui-card">
+			<div class="layui-card-header" ><p align="center">文件上传</p></div>
+				<form name="myupload" class="layui-form" action="/pan/fileupload" method="post" enctype='multipart/form-data'
+					  style="margin-left: auto;margin-right: auto;text-align: center">
+
+				<!--3学科名称-->
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">文件选择</label>
+						<div class="layui-input-block">
+							<select class="test" id="typeSelect"  lay-filter="subjectSelect" name="type">
+								<option value="资质" selected="">资质</option>
+								<option value="外检" >外检</option>
+								<option value="规格书" >规格书</option>
+								<option value="认证">认证</option>
+                                <option value="厂检">厂检</option>
+                                <option value="认证">其他</option>
+							</select>
+						</div>
+					</div>
+				<div>
+                    详细（公司名称或其他）<input type="text" name="details" value="">
+				</div>
+				</div>
+                    <div class="layui-upload">
+                       <label id="lb"></label><br><!-- 展示文字名称-->
+                        <input type="button" value="选取文件" class="layui-btn layui-btn-normal" onclick="getFile()">
+                        <input style="display: none" type="file"  name="file" id="getF" onchange="clickF()">
+                        <button type="submit" class="layui-btn" id="test9" onclick="alert('正在上传，请稍后')">开始上传</button>
+                    </div>
+                </form>
+		</div>
+	</div>
+</div>
+
+<!--js Plungin-->
+<script>
+    function getFile(){
+	    $("#getF").click();
+    }
+    var filename="";
+    function clickF() {
+        filename=$("#getF").val();
+        var filenames=filename.split("\\");
+        filename=filenames[filenames.length-1];
+        $("#lb").text(filename);
+
+    }
+</script>
+<script src="../../jsTools/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="../../jsplug/echarts.min.js"></script>
+<!--暂时不使用后台逻辑-->
+    <!--<script src="../../js/question/question_upload.js"></script>-->
+</body>
+<script>
+    $(function () {
+        layui.use(['layer', 'form'], function () {
+        //每次选择列表中的值，都会调用该函数，完成对地址拼接中参数的赋值，以及表单隐藏元素，，并且调用upload_getJson()获取当前题目的知识点
+        var layer = layui.layer;
+        var form = layui.form();
+        //console.log("form is: "+form);
+        //监听表单中的考试名称
+        form.on('select(upload_selectTest)', function (data) {
+            alert(data.value);
+            upload_test=data.value;
+            $('#upload_testName').val(upload_test); //考试类型赋值给表单隐藏类型的数据
+            upload_getJson();
+            //singleSub_getJson();  //下拉框中的值发生变化，则刷新echarts
+        });
+    });})
+</script>
+</html>
