@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba0b8815-3b5f-4406-8627-e3be17a5a662" name="Default Changelist" comment="Revert &quot;first commit&quot;&#10;&#10;This reverts commit 4d6e9c50">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pan/mapper/foodMapper.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="ba0b8815-3b5f-4406-8627-e3be17a5a662" name="Default Changelist" comment="add application.yml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -301,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649260150416</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add application.yml">
+      <created>1649321721035</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1649321721035</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,6 +385,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="Revert &quot;first commit&quot;&#10;&#10;This reverts commit 4d6e9c50" />
     <MESSAGE value="Revert &quot;Revert &quot;first commit&quot;&quot;&#10;&#10;This reverts commit d4ca9d1f" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Revert &quot;first commit&quot;&quot;&#10;&#10;This reverts commit d4ca9d1f" />
+    <MESSAGE value="add application.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="add application.yml" />
   </component>
 </project>
