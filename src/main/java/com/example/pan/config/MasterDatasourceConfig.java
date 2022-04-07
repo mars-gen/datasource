@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 
 /**
  * <p>
- *  多数据源配置
+ *  多数据源配置  主库配置
  * </p>
  *
  * @author daShen

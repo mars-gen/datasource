@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 
 /**
  * <p>
- *
+ *  从库配置
  * </p>
  *
  * @author daShen
