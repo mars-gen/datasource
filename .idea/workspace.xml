@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba0b8815-3b5f-4406-8627-e3be17a5a662" name="Default Changelist" comment="Revert &quot;first commit&quot;&#10;&#10;This reverts commit 4d6e9c50">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/pan/mapper/foodMapper.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="09a3396e232d0a048861f97c99fe1fbfe3f4a181" />
+        <entry key="$PROJECT_DIR$" value="hot-fox" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -115,7 +116,20 @@
       <recent name="D:\geeo.dave\geeo\pan\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.PanApplication">
+  <component name="RunManager" selected="Application.foodService">
+    <configuration name="foodService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.pan.service.foodService" />
+      <module name="pan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.pan.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="queue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pan.util.queue" />
       <module name="pan" />
@@ -129,13 +143,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,10 +181,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.foodService" />
         <item itemvalue="JUnit.PanApplicationTests.contextLoads" />
         <item itemvalue="Application.queue" />
         <item itemvalue="JUnit.PanApplicationTests.contextLoads" />
-        <item itemvalue="Application.queue" />
         <item itemvalue="Application.queue" />
       </list>
     </recent_temporary>
